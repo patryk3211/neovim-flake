@@ -93,14 +93,15 @@ in {
 
       initScript = ''
         ${nvimCfg.initScript}
-        lua << EOF
-        ${nvimCfg.initScriptLua}
-        EOF
 
         let localrc = getcwd() . '/.vimrc'
         if filereadable(localrc)
           execute 'source '.localrc
         endif
+
+        lua << EOF
+        ${nvimCfg.initScriptLua}
+        EOF
       '';
 
       package = (pkgs.wrapNeovimUnstable buildCfg.package (neovimConfig // {
