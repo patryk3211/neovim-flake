@@ -122,9 +122,14 @@
       url = "github:MunifTanjim/nui.nvim";
       flake = false;
     };
+
+    nixd = {
+      url = "github:nix-community/nixd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
+  outputs = { self, nixpkgs, flake-utils, nixd, ... }@inputs:
   let
     rawPlugins = nvimLib.attrsets.mapAttrs (n: v: { src = v; }) inputs;
     #plugins = nvimLib.attrsets.mapAttrsToList (n: v: n) inputs;
@@ -138,8 +143,12 @@
     # General flake output stuff
     lib = nvimLib;
   } // flake-utils.lib.eachDefaultSystem (system: let
-    pkgs = import nixpkgs { inherit system; };
-    makePkg = pkgs: modules: (nvimConfig { inherit pkgs modules; lib = nvimLib; });
+    pkgs = (import nixpkgs { inherit system; });
+    makePkg = pkgs: modules: (nvimConfig {
+      inherit modules;
+      lib = nvimLib;
+      pkgs = pkgs // { nixd-flake = nixd.packages.${system}.default; };
+    });
 
     nixCfg = let
       override = nvimLib.mkOverride 1200;

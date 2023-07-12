@@ -12,7 +12,7 @@ in {
       name = "nixd";
       executable = "nixd";
       args = {};
-      package = pkgs.nixd;
+      package = pkgs.nixd-flake;
     }];
 
     neovim.treesitter.grammars = [ pkgs.tree-sitter-grammars.tree-sitter-nix ];
