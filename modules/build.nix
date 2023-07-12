@@ -96,6 +96,11 @@ in {
         lua << EOF
         ${nvimCfg.initScriptLua}
         EOF
+
+        let localrc = getcwd() . '/.vimrc'
+        if filereadable(localrc)
+          execute 'source '.localrc
+        endif
       '';
 
       package = (pkgs.wrapNeovimUnstable buildCfg.package (neovimConfig // {
