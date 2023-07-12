@@ -9,10 +9,10 @@ in {
 
   config = mkIf cfg.enable {
     neovim.lsp.servers = [{
-      name = "nixd";
-      executable = "nixd";
+      name = "nil_ls";
+      executable = "nil";
       args = {};
-      package = pkgs.nixd-flake;
+      package = pkgs.nil;
     }];
 
     neovim.treesitter.grammars = [ pkgs.tree-sitter-grammars.tree-sitter-nix ];

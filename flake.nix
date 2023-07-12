@@ -123,17 +123,15 @@
       flake = false;
     };
 
-    nixd = {
-      url = "github:nix-community/nixd";
+    nil = {
+      url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, nixd, ... }@inputs:
+  outputs = { self, nixpkgs, flake-utils, nil, ... }@inputs:
   let
     rawPlugins = nvimLib.attrsets.mapAttrs (n: v: { src = v; }) inputs;
-    #plugins = nvimLib.attrsets.mapAttrsToList (n: v: n) inputs;
-    #rawPlugins = nvimLib.genAttrs plugins (n: {src = inputs.${n};});
 
     nvimLib = import ./lib/extended.nix nixpkgs.lib;
     nvimConfig = { modules ? [], ... }@args:
@@ -143,11 +141,12 @@
     # General flake output stuff
     lib = nvimLib;
   } // flake-utils.lib.eachDefaultSystem (system: let
-    pkgs = (import nixpkgs { inherit system; });
+    pkgs = (import nixpkgs { inherit system; overlays = [
+      nil.overlays.default
+    ]; });
     makePkg = pkgs: modules: (nvimConfig {
-      inherit modules;
+      inherit pkgs modules;
       lib = nvimLib;
-      pkgs = pkgs // { nixd-flake = nixd.packages.${system}.default; };
     });
 
     nixCfg = let
