@@ -9,8 +9,8 @@ in {
     keymap = mkOption {
       type = types.attrsOf types.str;
       default = {
-        "<C-w>" = "cmp.mapping.scroll_docs(-4)";
-        "<C-s>" = "cmp.mapping.scroll_docs( 4)";
+        "<C-Up>" = "cmp.mapping.scroll_docs(-4)";
+        "<C-Down>" = "cmp.mapping.scroll_docs( 4)";
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-e>" = "cmp.mapping.abort()";
         "<CR>" = "cmp.mapping.confirm({ select = true })";

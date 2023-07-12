@@ -35,6 +35,7 @@ in {
     ./Diagnostics.nix
     ./SearchCount.nix
     ./ShowCmd.nix
+    ./TabLine.nix
   ];
 
   config = mkIf cfg.enable {
@@ -61,11 +62,17 @@ in {
         statusline = {
           ${concatStringsSep "," (map (v: "StatuslineComponents.${v}") cfg.statusline)}
         },
+        tabline = heirutils.make_buflist(
+          { StatuslineComponents.TabLine, { provider = " " } },
+          { provider = "" },
+          { provider = "" }
+        ),
         opts = {
           colors = require('catppuccin.palettes').get_palette "frappe",
         },
       }
       vim.opt.laststatus = 3
+      vim.opt.showtabline = 2
       -- vim.opt.showcmdloc = 'statusline'
       -- vim.opt.cmdheight = 0
     '';

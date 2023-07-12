@@ -112,6 +112,22 @@
         "type": "github"
       }
     },
+    "comments": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1686546603,
+        "narHash": "sha256-XM9yhp+SGxfAOdN/eDunzM0TMoCJhVth3wpFKNCGf3g=",
+        "owner": "numToStr",
+        "repo": "Comment.nvim",
+        "rev": "176e85eeb63f1a5970d6b88f1725039d85ca0055",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numToStr",
+        "repo": "Comment.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -315,6 +331,7 @@
         "cmp-path": "cmp-path",
         "cmp-treesitter": "cmp-treesitter",
         "cmp-vsnip": "cmp-vsnip",
+        "comments": "comments",
         "flake-utils": "flake-utils",
         "gitsigns": "gitsigns",
         "heirline": "heirline",

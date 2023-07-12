@@ -94,6 +94,12 @@
       flake = false;
     };
 
+    # Comment toggler
+    comments = {
+      url = "github:numToStr/Comment.nvim";
+      flake = false;
+    };
+
     # Other things
     plenary = {
       url = "github:nvim-lua/plenary.nvim";
