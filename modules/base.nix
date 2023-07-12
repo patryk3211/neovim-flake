@@ -52,6 +52,7 @@ in {
           bind = ":nohl<CR>";
           description = "Disable highlights";
           silent = true;
+          noremap = true;
         };
       };
     };

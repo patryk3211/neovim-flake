@@ -102,6 +102,7 @@ in {
           bind = ":Neotree toggle<CR>";
           description = "Opens file explorer in sidebar";
           silent = true;
+          noremap = true;
         };
       };
     };

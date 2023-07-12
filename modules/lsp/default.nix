@@ -53,12 +53,6 @@ in {
           lua = true;
           description = "Open diagnostic float";
         };
-
-        /*"<Space>q" = {
-          bind = "vim.diagnostic.setloclist";
-          lua = true;
-          description = "Open diagnostic message list";
-        };*/
       };
     };
 
@@ -67,46 +61,55 @@ in {
         "gD" = {
           bind = "vim.lsp.buf.declaration";
           lua = true;
+          noremap = true;
           description = "Go to symbol declaration";
         };
         "gd" = {
           bind = "vim.lsp.buf.definition";
           lua = true;
+          noremap = true;
           description = "Go to symbol definition";
         };
         "gi" = {
           bind = "vim.lsp.buf.implementation";
           lua = true;
+          noremap = true;
           description = "Go to symbol implementation";
         };
         "gR" = {
           bind = "vim.lsp.buf.references";
           lua = true;
+          noremap = true;
           description = "Go to symbol references";
         };
         "<Space>F" = {
           bind = nvim.lua.wrapFunction "vim.lsp.buf.format { async = true }";
           lua = true;
+          noremap = true;
           description = "Perform code formatting";
         };
         "<Space>ca" = {
           bind = "vim.lsp.buf.code_action";
           lua = true;
+          noremap = true;
           description = "Show code actions";
         };
         "<Space>rn" = {
           bind = "vim.lsp.buf.rename";
           lua = true;
+          noremap = true;
           description = "Rename symbol/function/etc.";
         };
         "<C-k>" = {
           bind = "vim.lsp.buf.signature_help";
           lua = true;
+          noremap = true;
           description = "Display signature help";
         };
         "<Space>H" = {
           bind = "vim.lsp.buf.hover";
           lua = true;
+          noremap = true;
           description = "Display hover information";
         };
       };

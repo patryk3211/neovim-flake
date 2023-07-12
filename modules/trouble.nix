@@ -21,6 +21,7 @@ in {
           bind = ":TroubleToggle<CR>";
           description = "Opens the trouble window";
           silent = true;
+          noremap = true;
         };
       };
     };
