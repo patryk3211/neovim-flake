@@ -13,6 +13,7 @@ let
     ./treesitter
     ./statusline
     ./fileexplorer.nix
+    ./comment.nix
 
     ./build.nix
   ];

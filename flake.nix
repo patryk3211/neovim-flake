@@ -146,6 +146,8 @@
 
         fileexplorer.enable = override true;
 
+        comments.enable = override true;
+
         language = {
           nix.enable = override true;
           lua.enable = override true;
