@@ -82,6 +82,12 @@
       flake = false;
     };
 
+    # LSP kind
+    lspkind = {
+      url = "github:onsails/lspkind.nvim";
+      flake = false;
+    };
+
     # Icons
     nvim-web-devicons = {
       url = "github:nvim-tree/nvim-web-devicons";
