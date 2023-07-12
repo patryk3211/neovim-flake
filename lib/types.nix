@@ -20,6 +20,12 @@ rec {
         default = false;
       };
 
+      silent = mkOption {
+        type = types.bool;
+        description = "Disables the output of the command";
+        default = false;
+      };
+
       description = mkOption {
         type = types.nullOr types.str;
         description = "Human readable description of the keybind";

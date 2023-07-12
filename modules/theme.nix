@@ -22,5 +22,13 @@ in {
     neovim.initScript = ''
       colorscheme ${cfg.name}
     '';
+    neovim.initScriptLua = ''
+      require('catppuccin').setup {
+        integrations = {
+          neotree = true,
+          which_key = true,
+        },
+      }
+    '';
   };
 }

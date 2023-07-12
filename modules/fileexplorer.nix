@@ -101,6 +101,7 @@ in {
         "<Space>e" = {
           bind = ":Neotree toggle<CR>";
           description = "Opens file explorer in sidebar";
+          silent = true;
         };
       };
     };

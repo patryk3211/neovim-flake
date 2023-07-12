@@ -11,7 +11,7 @@ let
     ./completion.nix
     ./languages
     ./treesitter
-    ./statusline.nix
+    ./statusline
     ./fileexplorer.nix
 
     ./build.nix

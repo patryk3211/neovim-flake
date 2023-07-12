@@ -14,6 +14,7 @@ with lib;
           (keys: bind: let
             bindOpts = {
               noremap = if bind.noremap then "true" else "false";
+              silent = if bind.silent then "true" else "false";
             } // (if bind.description != null then { desc = "'${bind.description}'"; } else {});
             actionStr = if bind.lua then bind.bind else "\"${bind.bind}\"";
           in configBind mode keys actionStr (bindOpts//opts))

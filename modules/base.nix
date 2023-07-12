@@ -45,5 +45,15 @@ in {
     neovim.initScriptLua = ''
       ${nvim.keybind.toLua cfg.keymap {}}
     '';
+
+    neovim.keymap = mkDefault {
+      normal = {
+        "<Space>hl" = {
+          bind = ":nohl<CR>";
+          description = "Disable highlights";
+          silent = true;
+        };
+      };
+    };
   };
 }

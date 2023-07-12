@@ -16,6 +16,12 @@
       flake = false;
     };
 
+    # Debugging
+    nvim-dap = {
+      url = "github:mfussenegger/nvim-dap";
+      flake = false;
+    };
+
     # Treesitter
     nvim-treesitter-context = {
       url = "github:nvim-treesitter/nvim-treesitter-context";

@@ -5,6 +5,20 @@ let
 in {
   options.neovim.completion = {
     enable = mkEnableOption "Enable NeoVim completion plugin.";
+
+    keymap = mkOption {
+      type = types.attrsOf types.str;
+      default = {
+        "<C-w>" = "cmp.mapping.scroll_docs(-4)";
+        "<C-s>" = "cmp.mapping.scroll_docs( 4)";
+        "<C-Space>" = "cmp.mapping.complete()";
+        "<C-e>" = "cmp.mapping.abort()";
+        "<CR>" = "cmp.mapping.confirm({ select = true })";
+      };
+      description = ''
+        Define keymap for the completion plugin.
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -29,9 +43,13 @@ in {
         },
         sources = cmp.config.sources({
           { name = 'vsnip' },
+          ${if config.neovim.lsp.enable then "{ name = 'nvim_lsp' }," else ""}
         }, {
           { name = 'buffer' },
         }),
+        mapping = {
+          ${concatStringsSep "," (attrsets.mapAttrsToList (n: v: "['${n}'] = ${v}") cfg.keymap)}
+        },
       }
 
       cmp.setup.cmdline(':', {
