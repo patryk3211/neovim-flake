@@ -54,11 +54,11 @@ in {
           description = "Open diagnostic float";
         };
 
-        "<Space>q" = {
+        /*"<Space>q" = {
           bind = "vim.diagnostic.setloclist";
           lua = true;
           description = "Open diagnostic message list";
-        };
+        };*/
       };
     };
 

@@ -14,6 +14,7 @@ let
     ./statusline
     ./fileexplorer.nix
     ./comment.nix
+    ./trouble.nix
 
     ./build.nix
   ];

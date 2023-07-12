@@ -34,6 +34,12 @@
       flake = false;
     };
 
+    # A nicer diagnostics menu
+    trouble = {
+      url = "github:folke/trouble.nvim";
+      flake = false;
+    };
+
     # Git
     gitsigns = {
       url = "github:lewis6991/gitsigns.nvim";
@@ -147,6 +153,8 @@
         fileexplorer.enable = override true;
 
         comments.enable = override true;
+
+        trouble.enable = override true;
 
         language = {
           nix.enable = override true;

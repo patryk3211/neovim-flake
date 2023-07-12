@@ -344,6 +344,7 @@
         "nvim-treesitter-context": "nvim-treesitter-context",
         "nvim-web-devicons": "nvim-web-devicons",
         "plenary": "plenary",
+        "trouble": "trouble",
         "vim-vsnip": "vim-vsnip",
         "which-key": "which-key"
       }
@@ -360,6 +361,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "trouble": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1687594889,
+        "narHash": "sha256-HvgCL5VTEuvFKLAs0f2zbVnetd5jAsgoYREqLMS+vkg=",
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "rev": "d99e2abd10808ef91738ce98a5c767e6a51df449",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "trouble.nvim",
         "type": "github"
       }
     },
