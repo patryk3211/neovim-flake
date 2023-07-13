@@ -9,10 +9,10 @@ static = {
   hint_icon = vim.fn.sign_getdefined("DiagnosticSignHint")[1];
 },
 init = function(self)
-  self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
-  self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-  self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
-  self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+  self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }) or 0
+  self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }) or 0
+  self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO }) or 0
+  self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT }) or 0
 end,
 update = { "DiagnosticChanged", "BufEnter" },
 hl = {
