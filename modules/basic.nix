@@ -19,11 +19,17 @@ in {
       type = types.bool;
       default = true;
     };
+
+    cursorLine = mkOption {
+      type = types.bool;
+      default = true;
+    };
   };
 
   config = {
     neovim.initScript = ''
       ${setOption "number" cfg.lineNumber}
+      ${setOption "cursorline" cfg.cursorLine}
 
       ${setOption "expandtab" cfg.expandTab}
       set tabstop=${toString cfg.tabWidth}

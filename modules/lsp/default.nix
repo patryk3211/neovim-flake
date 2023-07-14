@@ -106,7 +106,7 @@ in {
           noremap = true;
           description = "Display signature help";
         };
-        "<Space>H" = {
+        "<C-h>" = {
           bind = "vim.lsp.buf.hover";
           lua = true;
           noremap = true;
