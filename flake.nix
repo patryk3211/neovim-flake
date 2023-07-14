@@ -136,14 +136,7 @@
     nvimLib = import ./lib/extended.nix nixpkgs.lib;
     nvimConfig = { modules ? [], ... }@args:
       import ./default.nix (args // {modules = [{config.build.rawPlugins = rawPlugins;}] ++ modules;});
-    nvimBin = pkg: "${pkg}/bin/nvim";
-  in {
-    # General flake output stuff
-    lib = nvimLib;
-  } // flake-utils.lib.eachDefaultSystem (system: let
-    pkgs = (import nixpkgs { inherit system; overlays = [
-      nil.overlays.default
-    ]; });
+
     makePkg = pkgs: modules: (nvimConfig {
       inherit pkgs modules;
       lib = nvimLib;
@@ -177,18 +170,32 @@
         };
       };
     };
-    nixPkg = makePkg pkgs [nixCfg];
+
+  in {
+    # General flake output stuff
+    lib = nvimLib;
+
+    overlays.default = final: prev: {
+      neovim = makePkg prev;
+    };
+  } // flake-utils.lib.eachDefaultSystem (system: let
+    pkgs = (import nixpkgs { inherit system; overlays = [
+      nil.overlays.default
+    ]; });
+
+    nvimPkg = makePkg pkgs [nixCfg];
+    nvimBin = pkg: "${pkg}/bin/nvim";
   in {
     # Per system outputs
     apps = {
       default = {
         type = "app";
-        program = nvimBin nixPkg;
+        program = nvimBin nvimPkg;
       };
     };
 
     packages = {
-      default = nixPkg;
+      default = nvimPkg;
     };
   });
 }
