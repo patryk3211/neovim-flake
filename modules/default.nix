@@ -15,6 +15,7 @@ let
     ./fileexplorer.nix
     ./comment.nix
     ./trouble.nix
+    ./commands.nix
 
     ./build.nix
   ];
