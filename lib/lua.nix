@@ -20,6 +20,6 @@ rec {
     else if isNull v then
       "nil"
     else if (lib.isInt v) || (lib.isFloat v) then
-      lib.toString v
+      "${builtins.toString v}"
     else throw "Undefined type";
 }

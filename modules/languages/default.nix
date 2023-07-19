@@ -5,5 +5,6 @@
     ./nix.nix
     ./lua.nix
     ./rust.nix
+    ./cpp.nix
   ];
 }

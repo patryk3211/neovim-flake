@@ -167,6 +167,7 @@
           nix.enable = override true;
           lua.enable = override true;
           rust.enable = override true;
+          cpp.enable = override true;
         };
       };
     };
