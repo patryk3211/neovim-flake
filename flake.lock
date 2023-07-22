@@ -164,6 +164,22 @@
         "type": "github"
       }
     },
+    "friendly-snippets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689987777,
+        "narHash": "sha256-WNFpBrGB4vFuKRlF/6v/MwW17a7b1FFs2L/Cg6WWV4g=",
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "rev": "4aed1a0ca605cb1c87f59799a0cc4afe00a40272",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "type": "github"
+      }
+    },
     "gitsigns": {
       "flake": false,
       "locked": {
@@ -389,6 +405,7 @@
         "cmp-vsnip": "cmp-vsnip",
         "comments": "comments",
         "flake-utils": "flake-utils",
+        "friendly-snippets": "friendly-snippets",
         "gitsigns": "gitsigns",
         "heirline": "heirline",
         "lspkind": "lspkind",

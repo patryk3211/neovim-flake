@@ -99,6 +99,10 @@
       url = "github:hrsh7th/vim-vsnip";
       flake = false;
     };
+    friendly-snippets = {
+      url = "github:rafamadriz/friendly-snippets";
+      flake = false;
+    };
 
     # Utilities
     which-key = {
@@ -152,6 +156,7 @@
         lsp.enable = override true;
         treesitter.enable = override true;
         completion.enable = override true;
+        snippets.enable = override true;
 
         which-key.enable = override true;
 

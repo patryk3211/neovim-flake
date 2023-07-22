@@ -16,6 +16,7 @@ let
     ./comment.nix
     ./trouble.nix
     ./commands.nix
+    ./snippets.nix
 
     ./build.nix
   ];
