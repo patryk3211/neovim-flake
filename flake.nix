@@ -128,7 +128,8 @@
     };
 
     nil = {
-      url = "github:oxalica/nil?rev=18de045d7788df2343aec58df7b85c10d1f5d5dd";
+      # url = "github:oxalica/nil?rev=18de045d7788df2343aec58df7b85c10d1f5d5dd";
+      url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
