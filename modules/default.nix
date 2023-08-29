@@ -17,6 +17,7 @@ let
     ./trouble.nix
     ./commands.nix
     ./snippets.nix
+    ./presence.nix
 
     ./build.nix
   ];

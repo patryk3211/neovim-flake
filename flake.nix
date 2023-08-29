@@ -132,6 +132,11 @@
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    presence = {
+      url = "github:andweeb/presence.nvim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, nil, ... }@inputs:
@@ -168,6 +173,8 @@
         comments.enable = override true;
 
         trouble.enable = override true;
+
+        presence.enable = override true;
 
         language = {
           nix.enable = override true;
