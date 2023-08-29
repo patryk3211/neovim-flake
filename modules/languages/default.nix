@@ -6,5 +6,6 @@
     ./lua.nix
     ./rust.nix
     ./cpp.nix
+    ./python.nix
   ];
 }
