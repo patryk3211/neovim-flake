@@ -161,6 +161,7 @@
 
         lsp.enable = override true;
         treesitter.enable = override true;
+        treesitter.context.enable = override true;
         completion.enable = override true;
         snippets.enable = override true;
 

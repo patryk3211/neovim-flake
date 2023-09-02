@@ -70,7 +70,7 @@ in {
       map (p:
         if isString p then
           if p == "nvim-treesitter" then
-            pkgs.vimPlugins.nvim-treesitter.withPlugins (_: config.neovim.treesitter.grammars)
+            pkgs.vimPlugins.nvim-treesitter.withAllGrammars #withPlugins (_: config.neovim.treesitter.grammars)
           else
             buildPlugin p
         else
