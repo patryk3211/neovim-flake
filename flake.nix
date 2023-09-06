@@ -183,6 +183,7 @@
           rust.enable = override true;
           cpp.enable = override true;
           python.enable = override true;
+          cmake.enable = override true;
         };
       };
     };
