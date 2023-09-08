@@ -1,2 +1,2 @@
-set shiftwidth=2
+let g:default_tab_size = 2
 

@@ -40,8 +40,7 @@ in {
     };
   };
 
-  config = let
-  in {
+  config = {
     neovim.initScriptLua = ''
       ${nvim.keybind.toLua cfg.keymap {}}
     '';

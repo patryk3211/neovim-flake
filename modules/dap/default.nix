@@ -40,7 +40,32 @@ in {
           noremap = true;
           description = "Step over";
         };
+        "<Space>dL" = {
+          bind = "require('dap').run_last";
+          lua = true;
+          noremap = true;
+          description = "Run last configuration";
+        };
+        "<Space>dT" = {
+          bind = "require('dap').terminate";
+          lua = true;
+          noremap = true;
+          description = "Terminate running configuration";
+        };
+        "<Space>dC" = {
+          bind = "require('dap').clear_breakpoints";
+          lua = true;
+          noremap = true;
+          description = "Clear all breakpoints";
+        };
       };
     };
+
+    neovim.initScriptLua = ''
+        vim.api.nvim_create_user_command('DapBreak', function(opts)
+            require('dap').set_breakpoint(opts[1])
+        end, { nargs = 1 })
+        vim.api.nvim_create_user_command('DapListPoints', require('dap').list_breakpoints, {})
+    '';
   };
 }
