@@ -19,6 +19,7 @@ in {
           };
           clang = {
             excludeArgs = [ "-frounding-math" ];
+            extraArgs = [ "-std=c++17" ];
           };
         };
       };
