@@ -7,6 +7,7 @@ let
     ./icons.nix
     ./basic.nix
     ./lsp
+    ./dap
     ./which-key.nix
     ./completion.nix
     ./languages

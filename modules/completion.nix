@@ -14,7 +14,7 @@ in {
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-e>" = "cmp.mapping.abort()";
         "<C-s>" = "cmp.mapping.confirm({ select = true })";
-        "<Tab>" = ''cmp.mapping(function(fallback)
+        "<C-g>" = ''cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif vim.fn["vsnip#available"](1) == 1 then
@@ -25,7 +25,7 @@ in {
             fallback()
           end
         end, { "i", "s" })'';
-        "<S-Tab>" = ''cmp.mapping(function()
+        "<C-f>" = ''cmp.mapping(function()
           if cmp.visible() then
             cmp.select_prev_item()
           elseif vim.fn["vsnip#jumpable"](-1) == 1 then

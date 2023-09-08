@@ -160,6 +160,7 @@
         icons.enable = override true;
 
         lsp.enable = override true;
+        dap.enable = override true;
         treesitter.enable = override true;
         treesitter.context.enable = override true;
         completion.enable = override true;
