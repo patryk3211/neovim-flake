@@ -22,6 +22,11 @@
       flake = false;
     };
 
+    nvim-dap-ui = {
+      url = "github:rcarriga/nvim-dap-ui";
+      flake = false;
+    };
+
     # Treesitter
     nvim-treesitter-context = {
       url = "github:nvim-treesitter/nvim-treesitter-context";
@@ -161,6 +166,7 @@
 
         lsp.enable = override true;
         dap.enable = override true;
+        dap.ui.enable = override true;
         treesitter.enable = override true;
         treesitter.context.enable = override true;
         completion.enable = override true;

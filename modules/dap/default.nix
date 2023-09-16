@@ -4,6 +4,7 @@ let
   cfg = config.neovim.dap;
 in {
   imports = [
+    ./ui.nix
   ];
 
   options.neovim.dap = {

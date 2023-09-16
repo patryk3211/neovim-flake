@@ -15,6 +15,12 @@ in {
       sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn
       sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo
       sign define DiagnosticSignHint text= texthl=DiagnosticSignHint
+
+      sign define DapLogPoint text= texthl=DapLogPoint
+      sign define DapStopped text=→ linehl=debugPC
+      sign define DapBreakpoint text= texthl=DapBreakpoint
+      sign define DapBreakpointCondition text= texthl=DapBreakpointCondition
+      sign define DapBreakpointRejected text=
     '';
   };
 }
