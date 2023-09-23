@@ -52,7 +52,7 @@ in {
               added     = "✚", 
               modified  = "", 
               deleted   = "✖",
-              renamed   = "",
+              renamed   = "",
               untracked = "",
               ignored   = "",
               unstaged  = "󰄱",
@@ -86,7 +86,7 @@ in {
           filtered_items = {
             visible = true,
             hide_dotfiles = false,
-            hide_gitignored = false,
+            hide_gitignored = true,
 
             hide_by_name = {
               ".git",

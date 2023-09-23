@@ -16,7 +16,36 @@ config.neovim.statusline.components.TabLine = ''
     callback = function(_, minwid, _, button)
       if button == 'm' then
         vim.schedule(function()
-          vim.api.nvim_buf_delete(minwid, { force = false })
+          local curBufId = vim.api.nvim_get_current_buf()
+          if curBufId == minwid then
+            local buffers = vim.api.nvim_list_bufs()
+            local prev = 0
+            for _, buffer in ipairs(buffers) do
+              if buffer == minwid then
+                break
+              end
+              if vim.api.nvim_buf_get_option(buffer, "buflisted") then
+                prev = buffer
+              end
+            end
+            if prev == 0 and #buffers > 1 then
+              for _, buffer in ipairs(buffers) do
+                if buffer ~= minwid then
+                  if vim.api.nvim_buf_get_option(buffer, "buflisted") then
+                    prev = buffer
+                    break
+                  end
+                end
+              end
+            end
+            if prev ~= 0 then
+              vim.api.nvim_win_set_buf(0, prev)
+            end
+          end
+          local status, err = pcall(function() vim.api.nvim_buf_delete(minwid, { force = false }) end)
+          if not status then
+            print(err)
+          end
         end)
       else
         vim.api.nvim_win_set_buf(0, minwid)
